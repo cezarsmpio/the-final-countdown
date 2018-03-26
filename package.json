@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":
-      "pm2 start index.js -i 4 --attach --max-memory-restart 100M --node-args=\"--optimize_for_size --max_old_space_size=500\"",
+      "pm2 start index.js -i 1 --attach --max-memory-restart 100M --node-args=\"--optimize_for_size --max_old_space_size=500\"",
     "start:dev": "nodemon index.js"
   },
   "repository": {
