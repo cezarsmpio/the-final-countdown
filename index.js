@@ -3,6 +3,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const crypto = require('crypto');
+const port = process.env.PORT || 3000;
 
 // Middlewares
 const logger = require('morgan');
@@ -16,8 +17,8 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.options('*', cors());
-app.disable('etag');
 app.use(compression());
+app.set('port', port);
 
 app.use('/assets', express.static('assets'));
 app.set('view engine', 'pug');
@@ -89,6 +90,6 @@ io.on('connection', socket => {
  });
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log('Running!');
 });
