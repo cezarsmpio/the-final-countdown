@@ -1,0 +1,36 @@
+{
+  "name": "the-final-countdown",
+  "version": "1.0.0",
+  "description": "Ta na nam nam, ta nam nam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":
+      "pm2 start index.js -i 4 --attach --max-memory-restart 100M --node-args=\"--optimize_for_size --max_old_space_size=500\"",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cezarlz/the-final-countdown.git"
+  },
+  "author": "Cezar Luiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cezarlz/the-final-countdown/issues"
+  },
+  "homepage": "https://github.com/cezarlz/the-final-countdown#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "morgan": "^1.9.0",
+    "pm2": "^2.10.1",
+    "pug": "^2.0.3",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

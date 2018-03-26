@@ -1,0 +1,19 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title It's the final countdown 👩‍🎤
+  body
+
+    main#js-app.app.visitor
+      #js-timer-container.timer-container
+        h1#js-countdown.countdown 00:00:00
+
+        h1#js-time-over.time-over The time is over!
+
+    link(rel="stylesheet", href="/assets/css/main.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js")
+    script(src="//cdn.rawgit.com/albert-gonzalez/easytimer.js/89f51789/dist/easytimer.min.js")
+    script(src="/assets/js/utils.js")
+    script(src="/assets/js/visitor.js")

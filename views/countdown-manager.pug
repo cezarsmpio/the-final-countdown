@@ -1,0 +1,36 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title It's the final countdown 👩‍🎤
+  body
+
+    main#js-app.app.manager
+      div
+        #js-timer-container.timer-container
+          h1#js-countdown.countdown 00:00:00
+
+          h1#js-time-over.time-over The time is over!
+
+      div
+        .options
+          .option
+            .timer
+              input#js-timer.input.input--primary(type="number", min="0", step="1", placeholder="20 minutes", value="20")
+
+          .option
+            .button-groups
+              button#js-start.button.button--primary Start
+              button#js-pause.button Pause
+              button#js-stop.button.button--danger Stop
+
+        .room-link
+          label.room-link--label(for="js-room-link") Share with your friends! 😉
+          input#js-room-link.input.input--primary.room-link--input(type="text", name="room-link", readonly, value=shareUrl)
+
+    link(rel="stylesheet", href="/assets/css/main.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js")
+    script(src="//cdn.rawgit.com/albert-gonzalez/easytimer.js/89f51789/dist/easytimer.min.js")
+    script(src="/assets/js/utils.js")
+    script(src="/assets/js/manager.js")
