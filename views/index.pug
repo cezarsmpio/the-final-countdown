@@ -1,16 +1,10 @@
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title It's the final countdown 👩‍🎤
-  body
+extends layouts/page
 
-    main#js-app.app.start
-      div.button-group
-        button#js-create-room.button.button--primary Start!
+block content
+  main#js-app.app.start
+    div.button-group
+      button#js-create-room.button.button--primary Start!
 
-    link(rel="stylesheet", href="/assets/css/main.css")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js")
-    script(src="/assets/js/utils.js")
-    script(src="/assets/js/index.js")
+block append footer_scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js")
+  script(src="/assets/js/index.js")
