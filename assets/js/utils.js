@@ -14,5 +14,4 @@ const show = (el, display = 'block') => {
 
 const setRoomId = roomId => localStorage.setItem('roomId', roomId);
 
-const getRoomId = () =>
-  localStorage.getItem('roomId') || location.pathname.split('/').reverse()[0];
+const getRoomId = () => location.pathname.split('/').reverse()[0];

@@ -10,7 +10,5 @@ createRoomButton.addEventListener('click', () => {
 });
 
 socket.on('room.created', roomId => {
-  localStorage.setItem('roomId', roomId);
-
   window.location = `/m/${roomId}`;
 });
