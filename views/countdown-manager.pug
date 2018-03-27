@@ -17,7 +17,7 @@ html(lang="en")
         .options
           .option
             .timer
-              input#js-timer.input.input--primary(type="number", min="0", step="1", placeholder="20 minutes", value="20")
+              input#js-timer.input.input--primary(type="tel", min="0", step="1", placeholder="20 minutes", value="20")
 
           .option
             .button-groups
@@ -26,11 +26,13 @@ html(lang="en")
               button#js-stop.button.button--danger Stop
 
         .room-link
-          label.room-link--label(for="js-room-link") Share with your friends! 😉
-          input#js-room-link.input.input--primary.room-link--input(type="text", name="room-link", readonly, value=shareUrl)
+          label.room-link__label(for="js-room-link") Share with your friends! 😉
+          input#js-room-link.input.input--primary.room-link__input(type="text", name="room-link", readonly, value=shareUrl)
+          button#js-copy-link.button.room-link__button Copy
 
     link(rel="stylesheet", href="/assets/css/main.css")
     script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js")
     script(src="//cdn.rawgit.com/albert-gonzalez/easytimer.js/89f51789/dist/easytimer.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js")
     script(src="/assets/js/utils.js")
     script(src="/assets/js/manager.js")

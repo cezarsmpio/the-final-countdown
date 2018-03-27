@@ -9,13 +9,14 @@
   const socket = io(`/${roomId}`);
 
   // Elements
-  const roomLinkButton = $('#js-room-link');
+  const roomLinkInput = $('#js-room-link');
   const startTimer = $('#js-start');
   const pauseTimer = $('#js-pause');
   const stopTimer = $('#js-stop');
   const timerInput = $('#js-timer');
   const countdowm = $('#js-countdown');
   const timeOver = $('#js-time-over');
+  const copyLinkButton = $('#js-copy-link');
 
   // Init
   hide(pauseTimer);
@@ -25,8 +26,8 @@
   socket.emit('timer.update', { timer: getTimer() });
 
   // Select link
-  roomLinkButton.addEventListener('click', () => {
-    roomLinkButton.select();
+  roomLinkInput.addEventListener('click', () => {
+    roomLinkInput.select();
   });
 
   // Start timer
@@ -95,5 +96,18 @@
 
     socket.emit('timer.over');
     socket.emit('timer.update', { timer: getTimer() });
+  });
+
+  // Copy visitor link
+  const clipboard = new ClipboardJS(copyLinkButton, {
+    target: () => roomLinkInput,
+  });
+
+  clipboard.on('success', (e) => {
+    copyLinkButton.innerText = 'Copied!';
+
+    window.setTimeout(() => {
+      copyLinkButton.innerText = 'Copy';
+    }, 3000);
   });
 }

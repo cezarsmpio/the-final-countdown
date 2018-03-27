@@ -9,6 +9,7 @@
 
   --button-primary-bg: #18F2B2;
   --button-danger-bg: #89043D;
+  --button-default-bg: #fff;
 
   --input-primary-border: #2FE6DE;
   --input-primary-text-color: #2FE6DE;
@@ -58,10 +59,6 @@ body::after {
   align-items: center;
 }
 
-.option {
-  margin: 10px 20px;
-}
-
 /* Button Groups */
 .button-groups {
   display: flex;
@@ -82,6 +79,7 @@ body::after {
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  background-color: var(--button-default-bg);
 }
 
 .button--primary {
@@ -96,6 +94,8 @@ body::after {
 
 /* Inputs */
 .input {
+  max-width: 100%;
+
   background-color: transparent;
   border-radius: 5px;
 }
@@ -115,21 +115,31 @@ body::after {
 
 /* Room Link */
 .room-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 50px;
 
   text-align: center;
 }
 
-.room-link--label {
+.room-link__label {
   display: block;
+  flex: 1 0 100%;
   margin-bottom: 15px;
 }
 
-.room-link--input {
-  width: 320px;
+.room-link__input {
+  max-width: 400px;
+  width: 100%;
 
   text-align: center;
 }
+
+.room-link__button {
+  margin: 10px;
+}
+
 
 /* Visitor */
 .visitor {
